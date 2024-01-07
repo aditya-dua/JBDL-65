@@ -6,7 +6,7 @@ public interface Area {
 	public void area();
 	
 	static void displayArea() {
-		System.out.println("Area display called");
+		System.out.println("Area display called"+10/0);
 	}
 	
 	default void test() {
