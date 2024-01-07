@@ -1,0 +1,6 @@
+What is Error?
+Can we handle the errors?
+What are the params to control the JVM’s memory size
+How to increase the memory allocated to Java
+What is Exit 0
+How do you debug OOM errors?
