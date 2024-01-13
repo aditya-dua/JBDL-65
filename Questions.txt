@@ -4,3 +4,7 @@ What are the params to control the JVM’s memory size
 How to increase the memory allocated to Java
 What is Exit 0
 How do you debug OOM errors?
+
+Since the data in the AL class is Transient then how are ArrayList able to be deserialise?
+Impact of changing the SerialUID on the change of data members?
+How can Singleton classes be made Thread Safe?

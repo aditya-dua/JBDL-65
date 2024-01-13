@@ -2,6 +2,7 @@
 
 public class Singleton {
 
+	// Eager Init : Thread Safe
 	private static Singleton instance = new Singleton();
 	
 	private Singleton() {
@@ -10,6 +11,7 @@ public class Singleton {
 	
 	public static Singleton getInstance() {
 		
+		//Lazy Init
 		if(instance == null) {
 			instance= new Singleton();
 		}
