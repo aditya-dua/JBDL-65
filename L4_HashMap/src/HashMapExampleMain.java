@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapExampleMain {
 
@@ -19,7 +20,10 @@ public class HashMapExampleMain {
 		hm.put(s3, 50);
 		//hm.put(s, 99);
 		
+		System.out.println(s.equals(s3));
+		
 		System.out.println("HashMap Size:"+hm.size());
+		
 		
 		
 		
