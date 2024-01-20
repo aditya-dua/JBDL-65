@@ -46,6 +46,12 @@ public class DivideMain {
 		}
 		//db.close();
 		
+		try {
+			
+		}finally {
+			
+		}
+		
 		System.out.println(f+"After");
 
 	}
