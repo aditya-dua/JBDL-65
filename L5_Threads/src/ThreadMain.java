@@ -5,7 +5,9 @@ public class ThreadMain {
 		// TODO Auto-generated method stub
 
 		ThreadSample ts = new ThreadSample();
+		ts.setDaemon(true);
 		ts.start();
+		
 		
 		ThreadSample ts1 = new ThreadSample();
 		ts1.start();
@@ -14,7 +16,7 @@ public class ThreadMain {
 		
 		Thread t1 = new Thread(t, "Thread - Table of 5");
 		t1.start();
-		
+		t1.setPriority(10);
 		
 		Table table1 =new Table(7);
 		

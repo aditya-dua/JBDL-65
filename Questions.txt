@@ -8,3 +8,8 @@ How do you debug OOM errors?
 Since the data in the AL class is Transient then how are ArrayList able to be deserialise?
 Impact of changing the SerialUID on the change of data members?
 How can Singleton classes be made Thread Safe?
+
+What is the difference between calling the run method or the start method
+What is the difference between sleep and yield
+What is a daemon thread
+What are the different priorities of a thread?

@@ -7,10 +7,12 @@ public class PrintTableMain {
 		
 		Thread t1 = new Thread(t, "Thread - Table of 5");
 		t1.start();
+		//t1.run();
 		System.out.println(t1.getId());
 		System.out.println(t1.getName());
 		
 		Table table1 =new Table(7);
+		
 		
 		Thread t2 = new Thread(table1, "Thread - Table of 7");
 		
