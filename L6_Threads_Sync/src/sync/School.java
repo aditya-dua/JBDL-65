@@ -2,7 +2,7 @@ package sync;
 
 public class School {
 	
-	String name;
+	volatile String name;
 	
 	public School(String name) {
 		super();

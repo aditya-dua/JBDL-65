@@ -3,3 +3,16 @@ Session 2: Exception Handling, Interfaces, Errors, Abstract Class
 Session 3: Collections, ArrayList, Serialisation, Singleton Design Pattern
 Session 4; HashMap, HashSet
 Session 5: Streams and Introduction to Multi Threading
+Session 6: Multi Threading, Join, Notify, NotifyAll and Wait along with Thread Communication, Maven Intro
+Session 7: Introduction to Springboot
+
+
+
+
+
+Topics Remaining:
+1. Parallel Streams
+2. Maven Lifecycle
+3. Lambdas
+4. OOPS(Abstraction hands-on) -> This is covered
+5. Functional Interface
