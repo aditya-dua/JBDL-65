@@ -1,21 +1,11 @@
-package com.example.demo;
+package com.example.demo.post2.model;
 
-import java.util.Arrays;
-
-public class Student {
-	
+public class StudentPostResponseModel {
 	private int id;
 	private String name;
 	private int roll;
-	private Address add;
-	
 	private String [] subj= {"Eng,Phy,Chem"};
-	public Student(int id, String name, int roll) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.roll = roll;
-	}
+	
 	public int getId() {
 		return id;
 	}
@@ -40,19 +30,16 @@ public class Student {
 	public void setSubj(String[] subj) {
 		this.subj = subj;
 	}
-	public Address getAdd() {
-		return add;
+	public StudentPostResponseModel(int id, String name, int roll) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.roll = roll;
 	}
-	public void setAdd(Address add) {
-		this.add = add;
-	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", roll=" + roll + ", add=" + add + ", subj="
-				+ Arrays.toString(subj) + "]";
+	public StudentPostResponseModel() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
-	
-
 }

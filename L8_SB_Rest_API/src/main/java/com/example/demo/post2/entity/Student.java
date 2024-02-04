@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.post2.entity;
 
 import java.util.Arrays;
 
@@ -7,9 +7,10 @@ public class Student {
 	private int id;
 	private String name;
 	private int roll;
-	private Address add;
 	
 	private String [] subj= {"Eng,Phy,Chem"};
+	
+	
 	public Student(int id, String name, int roll) {
 		super();
 		this.id = id;
@@ -40,15 +41,10 @@ public class Student {
 	public void setSubj(String[] subj) {
 		this.subj = subj;
 	}
-	public Address getAdd() {
-		return add;
-	}
-	public void setAdd(Address add) {
-		this.add = add;
-	}
+	
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", roll=" + roll + ", add=" + add + ", subj="
+		return "Student [id=" + id + ", name=" + name + ", roll=" + roll + ", add="  + ", subj="
 				+ Arrays.toString(subj) + "]";
 	}
 	
