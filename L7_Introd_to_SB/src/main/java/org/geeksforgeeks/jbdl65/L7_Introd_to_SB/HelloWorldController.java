@@ -1,7 +1,6 @@
 package org.geeksforgeeks.jbdl65.L7_Introd_to_SB;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
