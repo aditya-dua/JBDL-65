@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.geeksforgeeks.jbdl65</groupId>
+  <artifactId>l9_Spring_Concepts</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>l9_Spring_Concepts</name>
+  <description>l9_Spring_Concepts</description>
+  
+  <dependencies>
+	  <!--
+		https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>6.0.13</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>6.0.13</version>
+		</dependency>
+	  
+  </dependencies>
+</project>

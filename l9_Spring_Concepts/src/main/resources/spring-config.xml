@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="greeting" name="greeting" class="l9_Spring_Concepts.Greeting">
+		<property name="message" value="Hello World from Props"></property>
+	</bean>
+	
+	<bean id="greeting2" name="greeting2" class="l9_Spring_Concepts.Greeting">
+		<property name="message" value="Hello World 2 from Props"></property>
+	</bean>
+	
+	
+	
+</beans>
