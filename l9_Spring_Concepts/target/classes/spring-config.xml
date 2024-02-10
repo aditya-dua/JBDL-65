@@ -3,14 +3,32 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
-	<bean id="greeting" name="greeting" class="l9_Spring_Concepts.Greeting">
+	<bean id="greeting" name="greeting" class="l9_Spring_Concepts.Greeting" init-method="init" destroy-method="killGreeting" >
 		<property name="message" value="Hello World from Props"></property>
 	</bean>
 	
-	<bean id="greeting2" name="greeting2" class="l9_Spring_Concepts.Greeting">
-		<property name="message" value="Hello World 2 from Props"></property>
+	<bean id="greeting2" name="greeting2" class="l9_Spring_Concepts.Greeting" scope="prototype">
+		<constructor-arg type="java.lang.String" value="Hello from Constructor"></constructor-arg>
+	</bean>
+	
+	<bean id="greeting3" name="greeting3" class="l9_Spring_Concepts.Greeting">
+		<constructor-arg type="int" value="100"></constructor-arg>
 	</bean>
 	
 	
 	
 </beans>
+
+<!-- 
+Employee POJO
+id
+name
+sal
+
+2 bean:
+singleton setter
+prototype constrcutor
+init
+destroy
+
+ -->
