@@ -3,5 +3,37 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
+	<bean id="addressSetter" name="addressSetter" class="l9_Spring_Concepts.Address">
+		
+		<property name="city" value="City 1 P"></property>
+		<property name="country" value="Country 1 P"></property>
+	</bean>
+	
+	<bean id="addressConstr" name="addressConstr" class="l9_Spring_Concepts.Address">
+		
+		<constructor-arg index="0" value="City 1"></constructor-arg>
+		<constructor-arg index="1" value="Country 1"></constructor-arg>
+	</bean>
+	
+	<bean id="employeSetter" name="employeSetter" class="l9_Spring_Concepts.Employee">
+		<property name="id" value="1"></property>
+		<property name="name" value="Aditya P"></property>
+		<property name="address" ref="addressSetter"></property>
+		
+	</bean>
+	
+	<bean id="employeSetter2" name="employeSetter2" class="l9_Spring_Concepts.Employee" scope="prototype">
+		<property name="id" value="1"></property>
+		<property name="name" value="Aditya P"></property>
+		<property name="address" ref="addressSetter"></property>
+		
+	</bean>
+	
+	<bean id="employeConstr" name="employeConstr" class="l9_Spring_Concepts.Employee">
+		<constructor-arg index = "0" value="2"></constructor-arg>
+		<constructor-arg index = "1" value="Aditya C"></constructor-arg>
+		<constructor-arg index = "2" ref="addressConstr"></constructor-arg>
+	
+	</bean>
 	
 </beans>
