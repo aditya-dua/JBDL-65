@@ -7,13 +7,13 @@ Session 6: Multi Threading, Join, Notify, NotifyAll and Wait along with Thread C
 Session 7: Introduction to Springboot
 Session 8: Springboot CRUD, CURL Testing, Postman
 Session 9: Spring Concepts, Internal Working of Spring, DI
-
-
+Session 10: Spring AOP, Spring DI Using Collections, SB Delete Mapping, Bean Factory, Spring Architecture Internal Working of Spring
 
 
 
 Topics Remaining:
-1. Parallel Streams Done in Lecture 10 : 
+1. Parallel Streams Done in Lecture 10 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java
+
 2. Maven Lifecycle
 3. Lambdas
 4. OOPS(Abstraction hands-on) -> This is covered
