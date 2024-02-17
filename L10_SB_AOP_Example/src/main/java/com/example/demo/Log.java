@@ -19,9 +19,7 @@ public class Log {
 	@Pointcut("execution (* com.example.demo.Student.*(..))")
 	private void selectAll() {
 		
-	}
-	
-	
+	}	
 	
 	@Before("selectAll()")
 	public void beforeAdvise() {
