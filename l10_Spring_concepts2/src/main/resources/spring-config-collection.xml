@@ -17,6 +17,7 @@
 				<value>India</value>
 				<value>USA</value>
 				<value>Canada</value>
+				<value>Canada</value>
 				<value>Sri Lanka</value>
 			</set>
 		</property>
@@ -26,6 +27,7 @@
 				<entry key="1" value ="1, Delhi"></entry>
 				<entry key="2" value ="2, Delhi"></entry>
 				<entry key="3" value ="3, Delhi"></entry>
+				<entry key="3" value ="4, Delhi"></entry>
 			</map>
 		</property>
 	</bean>
