@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import com.example.demo.entity.Student;
 import com.example.demo.model.StudentPostRequestModel;
@@ -78,6 +79,19 @@ public class StudentService {
 		
 		return list;
 		
+	}
+	
+	
+	public Student deleteStudent(int id) {
+		Student temp =null;
+		if(studentHM == null) {
+			System.out.println("HashMap is not created yet.");
+		}else if(studentHM.containsKey(id)){
+			temp = studentHM.remove(id);
+		} else {
+			System.out.println("Student Doesnot Exists.");
+		}
+		return temp;
 	}
 	
 	private int getRandomNumber() {
