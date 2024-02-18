@@ -12,7 +12,7 @@ Session 10: Spring AOP, Spring DI Using Collections, SB Delete Mapping, Bean Fac
 
 
 Topics Remaining:
-1. Parallel Streams Done in Lecture 10 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java
+1. Parallel Streams Done in Lecture 10 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java -> This is covered
 
 2. Maven Lifecycle
 3. Lambdas
