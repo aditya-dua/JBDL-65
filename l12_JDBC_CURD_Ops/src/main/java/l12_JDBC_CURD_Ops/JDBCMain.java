@@ -3,6 +3,7 @@ package l12_JDBC_CURD_Ops;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -20,12 +21,13 @@ public class JDBCMain {
 		try {
 			con = dbConnection(url,user,password);
 			//createTable(con);
-			insertRecord(con);
+			//insertRecord(con);
 			
-			for(int i=0;i<10;i++) {
+			/*for(int i=0;i<10;i++) {
 				temp = getRandomNumber();
 				insertRecordPS(con,temp,"First "+temp,"Last "+temp,temp);
-			}
+			}*/
+			selectQuery(con);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,6 +92,31 @@ public class JDBCMain {
 		return result;
 		
 	}
+	
+	public static void selectQuery(Connection con) throws SQLException {
+		String sql = "select * from `registeration`;";
+		Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+		ResultSet rs = stmt.executeQuery(sql);
+		System.out.println(rs.getRow());
+		System.out.println("*****************************************************");
+		System.out.println("ID            First Name      Last Name          Age ");
+		rs.absolute(25);
+		
+		while(rs.next()) {
+			System.out.println(rs.getInt(1)+"            "+rs.getString(2)+"      "+rs.getString(3)+"          "+rs.getInt(4)+" Row Number:"+rs.getRow());
+			
+		}
+		
+		
+		System.out.println("*****************************************************");
+		
+		rs.close();
+		stmt.close();
+		
+	}
+	
+	
+	
 	
 	private static int getRandomNumber() {
 		int min =1, max = 10000;
