@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="l13_hibernate_introduction.one2onemappingXML.Customer" table="customer-O2O">
+		<id name = "id" type = "int" column="id">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="name" column = "name" type="string" ></property>
+		<property name="email" column = "email" type="string"></property>
+	
+		<one-to-one name="tx" class = "l13_hibernate_introduction.one2onemappingXML.Transactions"></one-to-one>
+	</class>
+
+</hibernate-mapping>
