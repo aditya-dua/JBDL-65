@@ -11,7 +11,7 @@
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jbdl65</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">password</property>
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.connection.pool_size">1</property>
 		<mapping resource="employee.hbm.xml"/>

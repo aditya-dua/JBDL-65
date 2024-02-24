@@ -13,8 +13,7 @@
 		<property name="hibernate.connection.password">password</property>
 		<property name="hbm2ddl.auto">create</property>
 		<property name="hibernate.show_sql">true</property>
-		<property name="hibernate.connection.pool_size">1</property>
-		<mapping resource="employee.hbm.xml"/>
+		<mapping class="l13_hibernate_introduction.EmployeeAnnotation"/>
 		
 	</session-factory>
 

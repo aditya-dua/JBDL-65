@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.url">jdbc:postgres://rosie.db.elephantsql.com:5432/iecslwou</property>
+		<property name="hibernate.connection.username">iecslwou</property>
+		<property name="hibernate.connection.password">ItsRMQvwlUi1x-mvaIw_0h5Chh3MK0D5</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<mapping resource="employee.hbm.xml"/>
+		
+	</session-factory>
+
+</hibernate-configuration>
+		
