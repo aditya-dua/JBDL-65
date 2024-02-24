@@ -8,11 +8,13 @@ Session 7: Introduction to Springboot
 Session 8: Springboot CRUD, CURL Testing, Postman
 Session 9: Spring Concepts, Internal Working of Spring, DI
 Session 10: Spring AOP, Spring DI Using Collections, SB Delete Mapping, Bean Factory, Spring Architecture Internal Working of Spring
+Session 11: JDBC Introduction, Parallel Streams
+Session 12: JDBC CRUD
 
 
 
 Topics Remaining:
-1. Parallel Streams Done in Lecture 10 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java -> This is covered
+1. Parallel Streams Done in Lecture 11 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java -> This is covered
 
 2. Maven Lifecycle
 3. Lambdas
