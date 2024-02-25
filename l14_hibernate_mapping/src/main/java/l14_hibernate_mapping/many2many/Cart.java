@@ -1,4 +1,4 @@
-package l14_hibernate_mapping.one2many;
+package l14_hibernate_mapping.many2many;
 
 import java.util.Set;
 
@@ -7,11 +7,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="cart-o2m-annotation")
+@Table(name="cart-m2m-annotation")
 public class Cart {
 	
 	@Id
@@ -23,8 +26,12 @@ public class Cart {
 	@Column(name="name")
 	private String name;
 	
-	@OneToMany(mappedBy = "cart",cascade = CascadeType.PERSIST)
+	@ManyToMany(targetEntity = Items.class,cascade = {CascadeType.ALL})
+	@JoinTable(name="Cart_item_Mapping_Annotation",
+				joinColumns = {@JoinColumn(name="cart_id")},
+				inverseJoinColumns = {@JoinColumn(name="item_id")})
 	private Set<Items> items;
+	
 	public int getId() {
 		return id;
 	}
