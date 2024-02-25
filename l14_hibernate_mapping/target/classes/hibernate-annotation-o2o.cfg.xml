@@ -13,8 +13,11 @@
 		<property name="hibernate.connection.password">password</property>
 		<property name="hbm2ddl.auto">create</property>
 		<property name="hibernate.show_sql">true</property>
-		<mapping class="l13_hibernate_introduction.EmployeeAnnotation"/>
+		<mapping class="l14_hibernate_mapping.one2many.Cart"/>
+		<mapping class="l14_hibernate_mapping.one2many.Items"/>
+		
 		
 	</session-factory>
 
 </hibernate-configuration>
+		
