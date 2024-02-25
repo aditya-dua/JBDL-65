@@ -47,6 +47,10 @@ public class M2MAnnotationMain {
 		s.save(cart);
 		s.save(cart2);
 		
+		s.save(i1);
+		s.save(i2);
+		s.save(i3);
+		s.save(i4);
 		
 		s.flush();
 		tx.commit();

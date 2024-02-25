@@ -26,7 +26,7 @@ public class Cart {
 	@Column(name="name")
 	private String name;
 	
-	@ManyToMany(targetEntity = Items.class,cascade = {CascadeType.ALL})
+	@ManyToMany(targetEntity = Items.class)
 	@JoinTable(name="Cart_item_Mapping_Annotation",
 				joinColumns = {@JoinColumn(name="cart_id")},
 				inverseJoinColumns = {@JoinColumn(name="item_id")})
