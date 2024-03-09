@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +30,10 @@ public class StudentController {
 		
 		return studentService.count();
 	}
-	
+	@GetMapping("/findByName/{name}")
+	public List<Student> findByName(@PathVariable String name) {
+		return studentService.findByName(name);
+	}
 	@GetMapping("/find/{id}")
 	public Student getById(@PathVariable int id) {
 		return studentService.getById(id);

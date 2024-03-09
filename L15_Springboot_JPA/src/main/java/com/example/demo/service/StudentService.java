@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +23,12 @@ public class StudentService {
 		return studentRepository.count();
 	}
 	
+	public List<Student> findByName(String name) {
+		return studentRepository.selectUsingName(name);
+	}
 	
 	public Student getById(int id) {
-		return studentRepository.getById(id);
+		return studentRepository.findById(id).get();
 	}
 
 	public Student createStudent(Student student) {
