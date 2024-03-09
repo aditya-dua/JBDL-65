@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,16 @@ public class StudentController {
 		return "Test API works!";
 	}
 	
+	@GetMapping("/count")
+	public long count() {
+		
+		return studentService.count();
+	}
+	
+	@GetMapping("/find/{id}")
+	public Student getById(@PathVariable int id) {
+		return studentService.getById(id);
+	}
 	@PostMapping("/create")
 	public Student createStudent(@RequestBody Student student) {
 		return studentService.createStudent(student);
