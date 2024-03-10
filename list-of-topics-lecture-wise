@@ -10,7 +10,10 @@ Session 9: Spring Concepts, Internal Working of Spring, DI
 Session 10: Spring AOP, Spring DI Using Collections, SB Delete Mapping, Bean Factory, Spring Architecture Internal Working of Spring
 Session 11: JDBC Introduction, Parallel Streams
 Session 12: JDBC CRUD
-
+Session 12: Introduction to Hibernate and One to One Mapping
+Session 14: Many to Many Mapping, One to Many and Hibernate Read and update Queries
+Session 15: Springbok with JPA Example and JPA intro
+Session 16: JPA Architecture, ResponseEntity, 
 
 
 Topics Remaining:
