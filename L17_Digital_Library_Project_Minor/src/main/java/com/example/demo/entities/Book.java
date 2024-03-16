@@ -37,10 +37,12 @@ public class Book {
 	
 	@Enumerated(value=EnumType.STRING)
 	private Genre genre;
+	
 	private int pages;
 	
 	@CreationTimestamp
 	private Date createdOn;
+	
 	@UpdateTimestamp
 	private Date updatedOn;
 	
