@@ -10,4 +10,12 @@ public class L17DigitalLibraryProjectMinorApplication {
 		SpringApplication.run(L17DigitalLibraryProjectMinorApplication.class, args);
 	}
 
+	/* Author Assignment
+	 * Student Repo
+	 * Book Service
+	 */
+	// Create the logic to update the author and find all 
+	// create all of the CURD operations
+	// create the logic to delete the books
+
 }
