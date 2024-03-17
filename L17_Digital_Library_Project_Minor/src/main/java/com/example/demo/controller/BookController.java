@@ -26,13 +26,14 @@ public class BookController {
 	public String test() {
 		return "Test API works!";
 	}
+	@GetMapping("/search")
 	public List<Book> getBooks(@RequestBody SearchBookRequest searchBookRequest) throws Exception{
 		return bookService.search(searchBookRequest);
 	}
-	@GetMapping("/search")
+	/*@GetMapping("/search")
 	public List<Book> search(@RequestParam String key,@RequestParam String value) throws Exception{
-		return bookService.search(key,value);
-	}
+		//return bookService.search(key,value);
+	}*/
 	
 	/*
 	 * 

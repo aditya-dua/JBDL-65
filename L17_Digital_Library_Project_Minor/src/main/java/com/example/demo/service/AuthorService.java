@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,10 @@ public class AuthorService {
 		
 		return this.authorRepository.save(author);
 	
+	}
+	
+	public List<Author> findAll(){
+		return authorRepository.findAll();
 	}
 	
 	// Create the logic to update the author and find all 

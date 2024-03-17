@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,6 +39,7 @@ public class Author {
 	@CreationTimestamp
 	private Date addedOn;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy = "my_author") // Give the name of the author in the book entity
 	private List<Book> bookList;
 
