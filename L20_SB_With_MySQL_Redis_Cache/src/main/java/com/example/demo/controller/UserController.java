@@ -1,7 +1,10 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,10 +34,19 @@ public class UserController {
 		
 		return "Data Loaddd Suucess.";
 	}
+	@DeleteMapping("/{userId}")
+	@CacheEvict(value="jbdl65-users" , key ="#userId")
+	public String deleteByUserId(@PathVariable int userId) {
+		repo.deleteById(userId);
+		
+		return "Success!";
+	}
 	
 	@GetMapping("/get/{userId}")
-	@Cacheable(value="jbdl65-users" , key ="#userId", condition = "#userId>1",unless = "#result.followers>12000")
+	@Cacheable(value="jbdl65-users" , key ="#userId", condition = "#userId>1",unless = "#result.followers>12000" )
 	public User getUserById(@PathVariable int userId) {
 		return repo.findById(userId).get();
 	}
+	
+	
 }
