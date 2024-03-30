@@ -13,15 +13,17 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="tx-one2one-annotation")
 public class Transactions {
+	
 	@Id
 	@Column(name="id")
 	@GeneratedValue
 	private int id;
+	
 	@Column(name="amount")
 	private double amount;
 	
 	@OneToOne(mappedBy = "tx")
-	@Cascade(value = CascadeType.SAVE_UPDATE)
+	@Cascade(value = CascadeType.ALL)
 	private Customer customer;
 	public int getId() {
 		return id;

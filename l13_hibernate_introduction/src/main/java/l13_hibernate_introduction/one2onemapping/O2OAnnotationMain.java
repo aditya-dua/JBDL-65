@@ -31,5 +31,9 @@ public class O2OAnnotationMain {
 		sf.close();
 		
 	}
+	
+	public static void deleteTest(int id) {
+		
+	}
 
 }

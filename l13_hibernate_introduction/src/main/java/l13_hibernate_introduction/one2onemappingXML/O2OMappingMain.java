@@ -24,7 +24,7 @@ public class O2OMappingMain {
 		Customer customer = new Customer(0, "Aditya", "a@a.com", tx);
 		tx.setCustomer(customer);
 		
-		s.save(customer);
+		s.save(tx);
 		s.flush();
 		t.commit();
 		s.close();
