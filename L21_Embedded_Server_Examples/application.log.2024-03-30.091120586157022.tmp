@@ -1,0 +1,35 @@
+2024-03-30T21:27:16.997+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] e.d.L21EmbeddedServerExamplesApplication : Starting L21EmbeddedServerExamplesApplication using Java 17.0.7 with PID 33243 (/Users/adityadua/Documents/JBDL-65/L21_Embedded_Server_Examples/target/classes started by adityadua in /Users/adityadua/Documents/JBDL-65/L21_Embedded_Server_Examples)
+2024-03-30T21:27:17.001+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] e.d.L21EmbeddedServerExamplesApplication : The following 1 profile is active: "production2"
+2024-03-30T21:27:17.793+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.s.b.w.e.j.JettyServletWebServerFactory : Server initialized with port: 9090
+2024-03-30T21:27:17.797+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] org.eclipse.jetty.server.Server          : jetty-12.0.7; built: 2024-02-29T21:19:41.771Z; git: c89aca8fd34083befd79f328a3b8b6ffff04347e; jvm 17.0.7+7
+2024-03-30T21:27:17.828+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.j.s.h.ContextHandler.application     : Initializing Spring embedded WebApplicationContext
+2024-03-30T21:27:17.829+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 783 ms
+2024-03-30T21:27:17.888+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.j.session.DefaultSessionIdManager    : Session workerName=node0
+2024-03-30T21:27:17.894+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.jetty.server.handler.ContextHandler  : Started osbwej.JettyEmbeddedWebAppContext@542f6803{application,/,b=file:/private/var/folders/_n/8btl73h10pj1gpzmmtnvf0gm0000gn/T/jetty-docbase.9090.16638525046109023473/,a=AVAILABLE,h=oeje10s.SessionHandler@5583098b{STARTED}}
+2024-03-30T21:27:17.895+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.j.e.servlet.ServletContextHandler    : Started osbwej.JettyEmbeddedWebAppContext@542f6803{application,/,b=file:/private/var/folders/_n/8btl73h10pj1gpzmmtnvf0gm0000gn/T/jetty-docbase.9090.16638525046109023473/,a=AVAILABLE,h=oeje10s.SessionHandler@5583098b{STARTED}}
+2024-03-30T21:27:17.897+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] org.eclipse.jetty.server.Server          : Started oejs.Server@16a9eb2e{STARTING}[12.0.7,sto=0] @2020ms
+2024-03-30T21:27:18.161+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.j.s.h.ContextHandler.application     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-30T21:27:18.161+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-30T21:27:18.163+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-30T21:27:18.168+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] org.eclipse.jetty.server.Server          : Stopped oejs.Server@16a9eb2e{STOPPING}[12.0.7,sto=0]
+2024-03-30T21:27:18.168+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.jetty.server.AbstractConnector       : Stopped ServerConnector@31973858{HTTP/1.1, (http/1.1)}{0.0.0.0:9090}
+2024-03-30T21:27:18.170+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.j.s.h.ContextHandler.application     : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-03-30T21:27:18.172+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] o.e.j.e.servlet.ServletContextHandler    : Stopped osbwej.JettyEmbeddedWebAppContext@542f6803{application,/,b=file:/private/var/folders/_n/8btl73h10pj1gpzmmtnvf0gm0000gn/T/jetty-docbase.9090.16638525046109023473/,a=AVAILABLE,h=oeje10s.SessionHandler@5583098b{STOPPED}}
+2024-03-30T21:27:18.176+05:30  WARN 33243 --- [L21_Embedded_Server_Examples] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-03-30T21:27:18.184+05:30  INFO 33243 --- [L21_Embedded_Server_Examples] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-30T21:27:18.201+05:30 ERROR 33243 --- [L21_Embedded_Server_Examples] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
+
