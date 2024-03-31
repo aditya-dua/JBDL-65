@@ -28,4 +28,9 @@ public class L22SpringSecurityInMemoryUserApplication {
 		return "Home API works!";
 	}
 	
+	@GetMapping("/admin")
+	public String adminTest() {
+		System.out.println("Test Start");
+		return "Admin API works!";
+	}
 }

@@ -20,22 +20,41 @@ public class SecurityConfig {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		
 		UserDetails user = User.withUsername("spring").password(encoder.encode("spring")).roles("USER").build();
+	
+		UserDetails user2 = User.withUsername("admin").password(encoder.encode("spring")).roles("ADMIN").build();
 		
-		return new InMemoryUserDetailsManager(user);
+		
+		UserDetails[] userArr = {user,user2};
+		
+		return new InMemoryUserDetailsManager(userArr);
 	}
 	
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http ) throws Exception{
-		
-		http.authorizeHttpRequests()
-		.requestMatchers("/user").authenticated()
-		.requestMatchers("/home").permitAll()
-		.and()
-		.formLogin()
-		.and().httpBasic();
-		
-		return http.build();
-		
-	}
+	
+	  @Bean public SecurityFilterChain filterChain(HttpSecurity http ) throws
+	  Exception{
+	  
+	  http.authorizeHttpRequests()
+	  .requestMatchers("/admin").hasRole("ADMIN")
+	  .requestMatchers("/user").hasAnyRole("USER","ADMIN")
+	  .requestMatchers("/home").permitAll() 
+	  
+	  .and() .formLogin() .and().httpBasic();
+	  
+	  return http.build();
+	  
+	  }
+		/*
+		 * 
+		 * @Bean public SecurityFilterChain filterChain(HttpSecurity http ) throws
+		 * Exception{
+		 * 
+		 * http.authorizeHttpRequests() .requestMatchers("/user").hasRole("USER")
+		 * .requestMatchers("/admin").hasAnyRole("ADMIN","USER")
+		 * .requestMatchers("/home").permitAll() .and() .formLogin() .and().httpBasic();
+		 * 
+		 * return http.build();
+		 * 
+		 * }
+		 */
 	
 }
