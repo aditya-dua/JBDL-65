@@ -14,5 +14,9 @@ public class Calculator {
 	public int calculateInterest(int p,int r, int t) {
 		return p*r*t/100;
 	}
+	
+	public String greet(String name) {
+		return "Hello "+name+",";
+	}
 
 }

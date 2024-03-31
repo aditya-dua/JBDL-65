@@ -24,13 +24,20 @@ public class AddFunctionalityTesting {
 	@Test
 	public void test() {
 		int sum  = c.add(10, 20);
-		assertEquals(35, sum);
+		assertEquals(30, sum);
 	}
 	
 	@Test
 	public void diffTest() {
 		int diff  = c.diff(10, 20);
 		assertEquals(-10, diff);
+		
+	}
+	
+	@Test
+	public void nameTest() {
+		String message   = c.greet("Aditya");
+		assertEquals("Hello Aditya,", message);
 		
 	}
 	
