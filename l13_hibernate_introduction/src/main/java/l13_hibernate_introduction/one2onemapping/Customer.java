@@ -24,7 +24,7 @@ public class Customer {
 	private String email;
 	
 	@OneToOne
-	@PrimaryKeyJoinColumn
+	@PrimaryKeyJoinColumn(name="tx_id")
 	private Transactions tx;
 
 	public int getId() {

@@ -19,3 +19,19 @@ public class L21SpringSecurityApplication {
 	}
 
 }
+
+/*
+ * 
+ * 
+ * 
+@Bean
+@Order(SecurityProperties.BASIC_AUTH_ORDER) //very low priority
+SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws
+Exception {
+  http.authorizeRequests().anyRequest().authenticated();
+  http.formLogin();
+  http.httpBasic();
+  return http.build();
+}
+
+ */
