@@ -14,6 +14,7 @@ public class SecurityConfig {
 	@Autowired
 	public void configure(AuthenticationManagerBuilder auth, DataSource dataSource, PasswordEncoder passwordEncoder) throws Exception {
 		
+		System.out.println("DataSource is:"+dataSource);
 		auth.jdbcAuthentication()
 		.dataSource(dataSource)
 		.withDefaultSchema()

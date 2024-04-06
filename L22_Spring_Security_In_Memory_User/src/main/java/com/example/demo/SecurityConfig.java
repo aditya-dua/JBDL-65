@@ -15,6 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+	
 	@Bean
 	public InMemoryUserDetailsManager userDetailsService() {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -30,8 +31,7 @@ public class SecurityConfig {
 	}
 	
 	
-	  @Bean 
-	  
+	  @Bean
 	  public SecurityFilterChain filterChain(HttpSecurity http ) throws
 	  Exception{
 	  
