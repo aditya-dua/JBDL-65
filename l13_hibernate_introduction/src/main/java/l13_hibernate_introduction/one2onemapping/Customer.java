@@ -14,7 +14,7 @@ public class Customer {
 
 	@Id
 	@Column(name="id")
-	@GeneratedValue
+	
 	private int id;
 	
 	@Column(name="name")
@@ -65,6 +65,14 @@ public class Customer {
 		this.name = name;
 		this.email = email;
 		this.tx = tx;
+	}
+
+	
+	public Customer(int id, String name, String email) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
 	}
 
 	public Customer() {
