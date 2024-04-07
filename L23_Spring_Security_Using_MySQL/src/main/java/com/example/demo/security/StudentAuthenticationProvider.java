@@ -20,11 +20,21 @@ import com.example.demo.repo.StudentRepo;
 @Component
 public class StudentAuthenticationProvider implements AuthenticationProvider {
 
-	@Autowired
-	private StudentRepo repository;
+//	@Autowired
+//	private StudentRepo repository;
+//	
+//	@Autowired
+//	private PasswordEncoder encoder;
 	
-	@Autowired
+	private StudentRepo repository;
+
 	private PasswordEncoder encoder;
+
+	public StudentAuthenticationProvider(StudentRepo repository, PasswordEncoder encoder) {
+		this.encoder = encoder;
+		this.repository = repository;
+	}
+
 	
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -44,8 +54,13 @@ public class StudentAuthenticationProvider implements AuthenticationProvider {
 			
 			System.out.println("Roles:"+getStudentRole(s.getRole()));
 			
-			return new UsernamePasswordAuthenticationToken(username, password, getStudentRole(s.getRole()));
+			Authentication auth = new UsernamePasswordAuthenticationToken(username, password, getStudentRole(s.getRole()));
+			
+			System.out.println(auth);
+			
+			return auth;
 		}else {
+			System.err.println("Bad Creds.");
 			throw new BadCredentialsException("In correct password.");
 		}
 		
@@ -55,10 +70,16 @@ public class StudentAuthenticationProvider implements AuthenticationProvider {
 	private List<GrantedAuthority> getStudentRole(String studentRoles){
 		List<GrantedAuthority> grantedAuthorityList = new ArrayList<GrantedAuthority>();
 		
+		/*if(studentRoles.equals("admin")) {
+			grantedAuthorityList.add(new SimpleGrantedAuthority("ROLE_READ"));
+			grantedAuthorityList.add(new SimpleGrantedAuthority("ROLE_WRITE"));
+		}*/
+		
+		
 		String [] roles = studentRoles.split(",");
 		
 		for (int i = 0; i < roles.length; i++) {
-			grantedAuthorityList.add(new SimpleGrantedAuthority(roles[i].replaceAll("\\s+", "")));
+			grantedAuthorityList.add(new SimpleGrantedAuthority(roles[i].trim()));
 		}
 		
 		return grantedAuthorityList;
@@ -67,7 +88,8 @@ public class StudentAuthenticationProvider implements AuthenticationProvider {
 	@Override
 	public boolean supports(Class<?> authentication) {
 		// TODO Auto-generated method stub
-		return false;
+		return authentication.equals(UsernamePasswordAuthenticationToken.class);
+		//return false;
 	}
 
 }

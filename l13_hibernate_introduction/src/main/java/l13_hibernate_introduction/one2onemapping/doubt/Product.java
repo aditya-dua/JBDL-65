@@ -1,4 +1,7 @@
-package l13_hibernate_introduction.one2onemapping;
+package l13_hibernate_introduction.one2onemapping.doubt;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,24 +11,23 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 
+
 @Entity
-@Table(name="customer-one2one-annotation")
-public class Customer {
+@Table(name ="Product")
+public class Product {
 
 	@Id
 	@Column(name="id")
-	
+	@GeneratedValue
 	private int id;
 	
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="email")
-	private String email;
-	
 	@OneToOne
 	@PrimaryKeyJoinColumn
-	private Transactions tx;
+	
+	private ProductDetails details;
 
 	public int getId() {
 		return id;
@@ -43,42 +45,26 @@ public class Customer {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public ProductDetails getDetails() {
+		return details;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setDetails(ProductDetails details) {
+		this.details = details;
 	}
 
-	public Transactions getTx() {
-		return tx;
-	}
-
-	public void setTx(Transactions tx) {
-		this.tx = tx;
-	}
-
-	public Customer(int id, String name, String email, Transactions tx) {
+	public Product(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.email = email;
-		this.tx = tx;
+		
 	}
 
-	
-	public Customer(int id, String name, String email) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-	}
-
-	public Customer() {
+	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	
 	

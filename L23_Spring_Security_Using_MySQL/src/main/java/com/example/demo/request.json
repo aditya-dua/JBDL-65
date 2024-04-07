@@ -1,0 +1,89 @@
+Requests:
+
+1. 
+URL:  localhost:8080/register
+
+Body:
+
+{
+    "name":"aditya",
+    "username":"aditya",
+    "password":"aditya",
+    "role":"ROLE_WRITE"
+}
+
+Response:
+
+{
+    "id": 1,
+    "name": "aditya",
+    "username": "aditya",
+    "password": "$2a$10$PxhJm9OtgHGVOWoUkoTnYuCPmK4xypYggk9nsq1r.T4xjB5R2PCsC",
+    "role": "ROLE_WRITE"
+}
+
+
+
+2. localhost:8080/register
+
+Body:
+
+{
+    "name":"admin",
+    "username":"admin",
+    "password":"admin",
+    "role":"ROLE_WRITE , ROLE_READ , ROLE_ADMIN "
+}
+
+Response:
+
+{
+    "id": 1,
+    "name": "admin",
+    "username": "admin",
+    "password": "$2a$10$8ks8mr4Ow1dE.U09Dy/xW.OxLKnFh.RfNlLJ32NP.QeyCKP3fXiji",
+    "role": "ROLE_WRITE , ROLE_READ , ROLE_ADMIN "
+}
+
+
+3. localhost:8080/register
+
+Body:
+
+{
+    "name":"user",
+    "username":"user",
+    "password":"user",
+    "role":"ROLE_READ"
+}
+
+
+Response:
+
+{
+    "id": 3,
+    "name": "user",
+    "username": "user",
+    "password": "$2a$10$E0ZjojtzKuPSC/r62AMisOBQAIqhFHzj6ynXqqbvaOIbXq5Ohhmm2",
+    "role": "ROLE_READ"
+}
+
+4. localhost:8080/get1
+
+Auth: admin/admin
+
+
+5. localhost:8080/get?username=aditya
+
+Auth: aditya/aditya
+Response: 
+
+{
+    "id": 1,
+    "name": "aditya",
+    "username": "aditya",
+    "password": "$2a$10$heRiRbkV3ocfCFd6Kf3xVeJkrieZwRKcqassijlrADwvJxwvbFOUe",
+    "role": "ROLE_READ"
+}
+
+

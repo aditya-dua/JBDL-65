@@ -25,8 +25,13 @@ public class StudentSecurityConfig {
 		http.authorizeRequests()
 		.requestMatchers("/register").permitAll()
 		.requestMatchers("/test").permitAll()
-		//.requestMatchers("/get").hasAuthority("ROLE_READ")
 		.requestMatchers("/get").permitAll()
+		.requestMatchers("/get1").hasAuthority("ROLE_READ")
+		.requestMatchers("/student/roles").hasAuthority("ROLE_WRITE")
+		
+		//.requestMatchers("/get").permitAll()
+		.and()
+		.formLogin()
 		.and()
 		.httpBasic();
 		return http.build();

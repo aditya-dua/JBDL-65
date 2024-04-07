@@ -31,7 +31,15 @@ public class StudentController {
 		
 		System.out.println("In Get "+username);
 		
-		return service.getDetails(username);
+		return service.getDetails(username);	
+	}
+	
+	@GetMapping("/get1")
+	public Student get() {
+		
+		System.out.println("In Get ");
+		
+		return service.getDetails("aditya");
 		
 	}
 	
