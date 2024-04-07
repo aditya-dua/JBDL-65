@@ -17,7 +17,11 @@ Session 16: JPA Architecture, ResponseEntity, MSOA, Eureka Server and MSOA using
 Session 17: Minor Project - 1
 Session 18: Minor Project Phase 1 Complete
 Session 19: Redis Setup and Introduction with Theory
-
+Session 20: Springboot with Redis as DB and Cache, 
+Session 21: Logging SB, Embedded Servers & Profiles in SB and Spring Security Introduction
+Session 22: Spring Security and SS with In Memory User and Junit
+Session 23: Spring Security with JDBC and Kafka Introduction
+Session 24: Spring Security with JDBC final code and Kafka Introduction with Producer
 
 Topics Remaining:
 1. Parallel Streams Done in Lecture 11 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java -> This is covered

@@ -35,7 +35,11 @@ public class L24SpringbootWithKafkaApplication {
 
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic hello-world --from-beginning
 	 * 
+	 * Mac:
 	 * 
+	 * ./bin/zookeeper-server-start.sh ./config/zookeeper.properties
+	 * ./bin/kafka-server-start.sh ./config/server.properties
+	 * ./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hello-world --from-beginning
 	 */
 
 }
