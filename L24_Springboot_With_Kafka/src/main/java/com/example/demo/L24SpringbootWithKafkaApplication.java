@@ -41,5 +41,15 @@ public class L24SpringbootWithKafkaApplication {
 	 * ./bin/kafka-server-start.sh ./config/server.properties
 	 * ./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hello-world --from-beginning
 	 */
+	
+	
+	/**
+	 * 
+	 * payloadConsumerRecord(topic = hello-world, partition = 0, leaderEpoch = 0, offset = 0, CreateTime = 1713016883855, serialized key size = -1, serialized value size = 6, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = aditya)
+Topic:hello-world
+Key:null
+Value:aditya
+	 * 
+	 */
 
 }
