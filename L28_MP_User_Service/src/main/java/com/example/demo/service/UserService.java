@@ -1,12 +1,17 @@
 package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import org.json.simple.JSONObject;
 import com.example.demo.dtos.UserCreateRequest;
 import com.example.demo.models.User;
 import com.example.demo.repositories.UserCacheRepository;
 import com.example.demo.repositories.UserRepository;
+import com.example.demo.utils.Constants;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class UserService {
@@ -17,17 +22,23 @@ public class UserService {
 	@Autowired
 	private UserCacheRepository userCacheRepository;
 	
-	public void create(UserCreateRequest userCreateRequest) {
+	@Autowired
+	private ObjectMapper objectMapper;
+	
+	@Autowired
+	private KafkaTemplate<String, String> kafkaTemplate;
+	
+	public void create(UserCreateRequest userCreateRequest) throws JsonProcessingException {
 		User user = userCreateRequest.to();
 		
 		userRepository.save(user);
 		
-		// Now we have 2 micro service i.e. User and Wallet 
-		// User calls the API for User Creation...should this create automatically create wallet?
-		// It should automatically create Wallet
-		// Wallet creation could take 2-3 seconds.
-		// This is a kafka use case becuase we dont want user to wait 2-3 secs for wallet creation
-		// Kafka Producer
+		
+		JSONObject json = objectMapper.convertValue(user, JSONObject.class);
+		
+		String msg = objectMapper.writeValueAsString(json);
+		kafkaTemplate.send(Constants.USER_CREATED_TOPIC,msg);
+		
 	}
 	
 	

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.dtos.UserCreateRequest;
 import com.example.demo.models.User;
 import com.example.demo.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
 @RequestMapping("/user")
@@ -21,7 +22,7 @@ public class UserController {
 	UserService userService;
 
 	@PostMapping("")
-	public void createUser(@RequestBody UserCreateRequest createRequest) {
+	public void createUser(@RequestBody UserCreateRequest createRequest) throws JsonProcessingException {
 		userService.create(createRequest);
 	}
 
@@ -55,4 +56,6 @@ public class UserController {
 	 * "password": "aditya", "createdOn": "2024-04-21T16:04:19.542+00:00",
 	 * "updatedOn": "2024-04-21T16:04:19.542+00:00", "authorities": "usr" }
 	 */
+	
+	
 }
