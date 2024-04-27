@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.model.Wallet;
 import com.example.demo.repositories.WalletRepository;
 import com.example.demo.utils.Constants;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
@@ -52,12 +53,45 @@ public class WalletService {
 		this.walletRepository.save(wallet);
 		
 	}
-	// Hold this
+	
 	@KafkaListener(topics= {Constants.TXN_INITIATED_TOPIC}, groupId="group_id")
-	public void update(String msg) throws ParseException {
+	public void update(String msg) throws ParseException, JsonProcessingException {
 		
 		JSONObject event = (JSONObject) jsonParser.parse(msg);
-		String sender = String.valueOf(event.get("mobile"));
+		String sender = String.valueOf(event.get("sender"));
+		String receiver = String.valueOf(event.get("receiver"));
+		String externalTxnId = String.valueOf(event.get("externalTxnId"));
+		Double amount = (Double) event.get("amount");
+		
+		Wallet senderWallet = this.walletRepository.findByMobile(sender);
+		Wallet recieverWallet = this.walletRepository.findByMobile(receiver);
+		
+		JSONObject message = new JSONObject();
+		message.put("receiver", receiver);
+		message.put("sender", sender);
+		message.put("amount", amount);
+		message.put("externalTxnId", externalTxnId);
+		
+		if(senderWallet == null || recieverWallet == null || senderWallet.getBalance()<amount) {
+			System.out.println("Transaction Failed either wallet not found or insufficent baalcne");
+			message.put("WalletUpdateStatus", "FAILED");
+			kafkaTemplate.send(Constants.WALLET_UPDATE_TOPIC, objectMapper.writeValueAsString(message));
+		}
+		
+		try {
+			walletRepository.updateWallet(sender, -amount);
+			walletRepository.updateWallet(receiver, amount);
+			message.put("WalletUpdateStatus", "SUCCESS");
+			kafkaTemplate.send(Constants.WALLET_UPDATE_TOPIC, objectMapper.writeValueAsString(message));
+		}catch (Exception e) {
+			// TODO: handle exception
+			message.put("WalletUpdateStatus", "FAILED");
+			kafkaTemplate.send(Constants.WALLET_UPDATE_TOPIC, objectMapper.writeValueAsString(message));
+		}
+		
+		
+		
+		
 	}
 	
 	
