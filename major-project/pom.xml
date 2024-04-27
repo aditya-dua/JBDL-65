@@ -87,6 +87,7 @@
 		<module>user-service</module>
 		<module>wallet-service</module>
 		<module>transaction-service</module>
+		<module>notification-service</module>
 	</modules>
 
 </project>
