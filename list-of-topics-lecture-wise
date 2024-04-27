@@ -22,11 +22,16 @@ Session 21: Logging SB, Embedded Servers & Profiles in SB and Spring Security In
 Session 22: Spring Security and SS with In Memory User and Junit
 Session 23: Spring Security with JDBC and Kafka Introduction
 Session 24: Spring Security with JDBC final code and Kafka Introduction with Producer
-
+Session 25: Spring boot with Kafka (Producer and Consumer)
+Session 26: Parsing of CSV file 
+Session 27: Load Balancing with Springboot, Maven Lifecycle
+Session 28: Major Project - 1/ User Service
+Session 29:
+Session 30:
 Topics Remaining:
 1. Parallel Streams Done in Lecture 11 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java -> This is covered
 
-2. Maven Lifecycle
-3. Lambdas
+2. Maven Lifecycle -> This is covered
+3. Lambdas -> This is covered
 4. OOPS(Abstraction hands-on) -> This is covered
 5. Functional Interface
