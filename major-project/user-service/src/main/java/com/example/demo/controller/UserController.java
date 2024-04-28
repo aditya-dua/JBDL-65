@@ -34,7 +34,7 @@ public class UserController {
 	// Other Apps would get the user details on the basis of mobile
 	@GetMapping("/mobile/{mobileId}")
 	public User getUserDetailsByMob(@PathVariable("mobileId") String mobile) {
-		return userService.loadUserByUsername(mobile);
+		return (User) userService.loadUserByUsername(mobile);
 	}
 
 	/*

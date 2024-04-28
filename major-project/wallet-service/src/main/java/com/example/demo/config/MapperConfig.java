@@ -14,6 +14,7 @@ public class MapperConfig {
 		return new ObjectMapper();
 	}
 	
+	@Bean
 	public JSONParser getParser() {
 		return new JSONParser();
 	}

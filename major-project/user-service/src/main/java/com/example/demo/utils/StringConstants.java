@@ -11,4 +11,9 @@ public class StringConstants {
 	
 	public static final Long USER_REDIS_KEY_EXPIRY=86400l;
 	
+	// Constants related to spring security authority
+  
+    public static final String SERVICE_AUTHORITY = "svc";
+    public static final String AUTHORITIES_DELIMITER = ":";
+	
 }

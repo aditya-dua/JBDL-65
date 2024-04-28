@@ -1,5 +1,6 @@
 package com.example.demo.config;
 
+import org.json.simple.parser.JSONParser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,4 +13,9 @@ public class MapperConfig {
 	public ObjectMapper getMapper() {
 		return new ObjectMapper();
 	}
+	
+	@Bean
+    public JSONParser getParser(){
+        return new JSONParser();
+    }
 }
