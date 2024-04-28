@@ -26,8 +26,8 @@ Session 25: Spring boot with Kafka (Producer and Consumer)
 Session 26: Parsing of CSV file 
 Session 27: Load Balancing with Springboot, Maven Lifecycle
 Session 28: Major Project - 1/ User Service
-Session 29:
-Session 30:
+Session 29: Major Project - 1
+Session 30: Major Project Execution and Mockito, Feing, Actuator and Swagger
 Topics Remaining:
 1. Parallel Streams Done in Lecture 11 : https://github.com/aditya-dua/JBDL-65/blob/main/L5_Stream_API/src/ParallelStreams.java -> This is covered
 
